@@ -37,4 +37,4 @@ jobs:
 
       # ✅ Step 6: Push image to GitHub Container Registry (GHCR)
       - name: Push to GHCR
-        run: docker push ghcr.io/zamibd/vpn.ipsec:latest
+        run: docker push ghcr.io/zamibd/vpn-ipsec:latest
