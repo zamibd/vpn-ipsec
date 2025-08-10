@@ -1,5 +1,4 @@
- 
-FROM alpine:latest
+FROM alpine:3.21.4
 
 ARG SWAN_VER=5.3
 ARG BUILD_DATE

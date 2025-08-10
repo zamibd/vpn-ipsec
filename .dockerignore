@@ -3,7 +3,5 @@
 .gitignore
 docker-compose.yml
 LICENSE.md
-README.md
-README-zh.md
-vpn.env
-vpn.env.example
+README.mdb
+vpn.env 
