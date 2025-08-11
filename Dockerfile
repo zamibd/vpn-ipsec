@@ -39,7 +39,7 @@ RUN set -eux \
          nss-dev libcap-ng-dev libevent-dev curl-dev nspr-dev
 
 # Download IKEv2 helper script
-RUN wget -t 3 -T 30 -nv -O /opt/src/ikev2.sh https://raw.githubusercontent.com/zamibd/setup/refs/heads/main/setup-ipsec-vpn.sh \
+RUN wget -t 3 -T 30 -nv -O /opt/src/ikev2.sh https://raw.githubusercontent.com/zamibd/setup/main/setup-ipsec-vpn.sh \
     && chmod +x /opt/src/ikev2.sh \
     && ln -s /opt/src/ikev2.sh /usr/bin
     
