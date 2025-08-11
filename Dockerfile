@@ -45,8 +45,7 @@ RUN wget -t 3 -T 30 -nv -O /opt/src/ikev2.sh https://raw.githubusercontent.com/z
     
     COPY ./run.sh /opt/src/run.sh
     RUN chmod 755 /opt/src/run.sh
-    EXPOSE 500/udp 4500/udp
-    CMD ["/opt/src/run.sh"]
+    EXPOSE 500/udp 4500/udp 
 
 # Expose VPN ports
 EXPOSE 500/udp 4500/udp
