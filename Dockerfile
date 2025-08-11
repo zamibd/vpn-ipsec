@@ -42,6 +42,7 @@ RUN set -eux \
 RUN wget -t 3 -T 30 -nv -O /opt/src/ikev2.sh https://raw.githubusercontent.com/zamibd/setup/main/setup-ipsec-vpn.sh \
     && chmod +x /opt/src/ikev2.sh \
     && ln -s /opt/src/ikev2.sh /usr/bin
+
     
     COPY ./run.sh /opt/src/run.sh
     RUN chmod 755 /opt/src/run.sh
