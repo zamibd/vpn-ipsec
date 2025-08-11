@@ -42,11 +42,11 @@ RUN set -eux \
 RUN wget -t 3 -T 30 -nv -O /opt/src/ikev2.sh https://raw.githubusercontent.com/zamibd/setup/refs/heads/main/setup-ipsec-vpn.sh \
     && chmod +x /opt/src/ikev2.sh \
     && ln -s /opt/src/ikev2.sh /usr/bin
-
-# Copy run script
-RUN wget -t 3 -T 30 -nv -O /opt/src/run.sh \
-    https://raw.githubusercontent.com/zamibd/setup/refs/heads/main/run.sh \
-    && chmod 755 /opt/src/run.sh
+    
+    COPY ./run.sh /opt/src/run.sh
+    RUN chmod 755 /opt/src/run.sh
+    EXPOSE 500/udp 4500/udp
+    CMD ["/opt/src/run.sh"]
 
 # Expose VPN ports
 EXPOSE 500/udp 4500/udp
