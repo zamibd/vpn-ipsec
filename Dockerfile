@@ -39,17 +39,15 @@ RUN set -eux \
          nss-dev libcap-ng-dev libevent-dev curl-dev nspr-dev
 
 # Download IKEv2 helper script
-RUN wget -t 3 -T 30 -nv -O /opt/src/ikev2.sh https://raw.githubusercontent.com/zamibd/setup/main/setup-ipsec-vpn.sh \
+RUN wget -t 3 -T 30 -nv -O /opt/src/ikev2.sh https://github.com/hwdsl2/setup-ipsec-vpn/raw/909bf12175252e2e167c36c3b12d174c01f0824f/extras/ikev2setup.sh \
     && chmod +x /opt/src/ikev2.sh \
     && ln -s /opt/src/ikev2.sh /usr/bin
 
     
     COPY ./run.sh /opt/src/run.sh
     RUN chmod 755 /opt/src/run.sh
-    EXPOSE 500/udp 4500/udp 
-
-# Expose VPN ports
-EXPOSE 500/udp 4500/udp
+    EXPOSE 500/udp 4500/udp
+ 
 
 CMD ["/opt/src/run.sh"]
 
